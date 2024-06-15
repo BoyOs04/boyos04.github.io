@@ -2,12 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-#name-input {
-    border: 1px solid #4285f4;
-    background-color: #4285f4;
-    color: white;
-}
-
     <title>Nama kamu siapa?</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <style>
@@ -39,6 +33,45 @@ body {
             border-radius: 1vw; /* Responsive border-radius */
             box-shadow: 0px 1vw 2vw black;
         }
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw; /* Add spacing between elements */
+}
+
+label {
+    font-size: 1.5vw;
+    margin-bottom: 1vw;
+    color: #4285f4; /* Change label color */
+}
+
+#name-input {
+    width: 20vw;
+    padding: 1vw;
+    margin: 1vw;
+    border-radius: 1vw;
+    color: green;
+    background-color: #eaffff; /* Change input background color */
+    border: 1px solid #4285f4; /* Change input border color */
+}
+
+button {
+    width: 10vw;
+    padding: 1vw;
+    margin: 1vw;
+    border-radius: 1vw;
+    color: green;
+    background-color: #eaffff; /* Change button background color */
+    border: 1px solid #4285f4; /* Change button border color */
+}
+
+.container {
+    padding: 2vw; /* Responsive padding */
+    background:#eaffff;
+    border-radius: 1vw; /* Responsive border-radius */
+    box-shadow: 0px 1vw 2vw black;
+}
 
         input, button {
             font-family: 'Montserrat', serif;
