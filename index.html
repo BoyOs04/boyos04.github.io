@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Nama kamu siapa?</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Pacifico">
     <style>
         body {
             font-family: 'Montserrat', serif;
@@ -23,9 +23,11 @@
         }
         .container {
             padding: 2vw; /* Responsive padding */
-            background:#eaffff;
-            border-radius: 1vw; /* Responsive border-radius */
-            box-shadow: 0px 1vw 2vw black;
+            background: rgba(255, 255, 255, 0.4); /* Semi-transparent background for glass effect */
+            border-radius: 10vw; /* Responsive border-radius */
+            box-shadow: 0px 1vw 2vw rgba(0, 0, 0, 0.3); /* Shadow for glass effect */
+            backdrop-filter: blur(1px); /* Blur effect for glass effect */
+            border
         }
         .input-container {
             display: flex;
@@ -44,10 +46,9 @@
             margin: 1vw;
             border-radius: 1vw;
             color: green;
-            background-color: #eaffff; /* Change input background color */
+            background-color: rgba(255, 255, 255, 0.1); /* Transparent white background */
             border: 1px solid #4285f4; /* Change input border color */
-            background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
-            backdrop-filter: blur(10px); /* Blur effect */
+            backdrop-filter: blur(5px); /* Blur effect */
         }
         button {
             width: 10vw;
@@ -55,26 +56,18 @@
             margin: 1vw;
             border-radius: 1vw;
             color: green;
-            background-color: #eaffff; /* Change button background color */
+            background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
             border: 1px solid #4285f4; /* Change button border color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+            transition: all 0.3s ease; /* Smooth transition */
         }
-        .container {
-            padding: 2vw; /* Responsive padding */
-            background:#eaffff;
-            border-radius: 1vw; /* Responsive border-radius */
-            box-shadow: 0px 1vw 2vw black;
-        }
-        input, button {
-            font-family: 'Montserrat', serif;
-            font-size: 1.5vw; /* Responsive font size */
-            padding: 1vw; /* Responsive padding */
-            margin: 1vw; /* Responsive margin */
-            border-radius: 1vw; /* Responsive border-radius */
-            color: green;
+        button:hover {
+            background-color: #eaffff; /* Light background on hover */
+            transform: scale(1.05); /* Slightly larger on hover */
         }
         #judul {
             color: red;
-            text-shadow: 0px 0.3vw 0.4vw black;
+            text-shadow: 0px 0.3vw 0.4vw black; /* Text shadow for depth */
         }
         @media (max-width: 768px) {
             body {
@@ -101,10 +94,11 @@
 <body>
     <div class="container">
         <h3 id="judul">MASUKAN NAMA KAMU 🔥</h3>
-        <input type="text" id="name-input" placeholder="Nama kamu?" maxlength="20" required>
-        <div class="g-recaptcha" data-sitekey="6LcL_xsqAAAAAOHLKhJs15lmeWY_kZaASsas_87a"></div>
-        <button type="button" onclick="saveName()">🤍</button>
+        <div class="input-container">
+            <input type="text" id="name-input" placeholder="Nama kamu?" maxlength="10" required>
+            <button type="button" onclick="saveName()">🤍</button>
+        </div>
+         <div class="g-recaptcha" data-sitekey="6LcL_xsqAAAAAOHLKhJs15lmeWY_kZaASsas_87a"></div>        
     </div>
 </body>
-</html></body>
-</html>
+             </html>
