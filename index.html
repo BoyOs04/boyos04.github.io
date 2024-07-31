@@ -5,7 +5,7 @@
     <title>Nama kamu siapa?</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <style>
-body {
+        body {
             font-family: 'Montserrat', serif;
             color: rgb(243, 101, 101);
             font-size: 1.5vw; /* Responsive font size */
@@ -27,50 +27,43 @@ body {
             border-radius: 1vw; /* Responsive border-radius */
             box-shadow: 0px 1vw 2vw black;
         }
-.input-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1vw; /* Add spacing between elements */
-}
-
-label {
-    font-size: 1.5vw;
-    margin-bottom: 1vw;
-    color: #4285f4; /* Change label color */
-}
-
-#name-input {
-    width: 20vw;
-    padding: 1vw;
-    margin: 1vw;
-    border-radius: 1vw;
-    color: green;
-    background-color: #eaffff; /* Change input background color */
-    border: 1px solid #4285f4; /* Change input border color */
-}
-
-button {
-    width: 10vw;
-    padding: 1vw;
-    margin: 1vw;
-    border-radius: 1vw;
-    color: green;
-    background-color: #eaffff; /* Change button background color */
-    border: 1px solid #4285f4; /* Change button border color */
-}
-#name-input {
-    background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
-    backdrop-filter: blur(10px); /* Blur effect */
-}
-
-.container {
-    padding: 2vw; /* Responsive padding */
-    background:#eaffff;
-    border-radius: 1vw; /* Responsive border-radius */
-    box-shadow: 0px 1vw 2vw black;
-}
-
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1vw; /* Add spacing between elements */
+        }
+        label {
+            font-size: 1.5vw;
+            margin-bottom: 1vw;
+            color: #4285f4; /* Change label color */
+        }
+        #name-input {
+            width: 20vw;
+            padding: 1vw;
+            margin: 1vw;
+            border-radius: 1vw;
+            color: green;
+            background-color: #eaffff; /* Change input background color */
+            border: 1px solid #4285f4; /* Change input border color */
+            background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+            backdrop-filter: blur(10px); /* Blur effect */
+        }
+        button {
+            width: 10vw;
+            padding: 1vw;
+            margin: 1vw;
+            border-radius: 1vw;
+            color: green;
+            background-color: #eaffff; /* Change button background color */
+            border: 1px solid #4285f4; /* Change button border color */
+        }
+        .container {
+            padding: 2vw; /* Responsive padding */
+            background:#eaffff;
+            border-radius: 1vw; /* Responsive border-radius */
+            box-shadow: 0px 1vw 2vw black;
+        }
         input, button {
             font-family: 'Montserrat', serif;
             font-size: 1.5vw; /* Responsive font size */
@@ -94,10 +87,9 @@ button {
                 font-size: 4vw; /* Adjust font-size for smaller screens */
                 padding: 2vw; /* Adjust padding for smaller screens */
             }
-
-
-
+        }
     </style>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         function saveName() {
             const name = document.getElementById('name-input').value;
@@ -110,7 +102,9 @@ button {
     <div class="container">
         <h3 id="judul">MASUKAN NAMA KAMU 🔥</h3>
         <input type="text" id="name-input" placeholder="Nama kamu?" maxlength="20" required>
+        <div class="g-recaptcha" data-sitekey="6LcL_xsqAAAAAOHLKhJs15lmeWY_kZaASsas_87a"></div>
         <button type="button" onclick="saveName()">🤍</button>
     </div>
 </body>
+</html></body>
 </html>
