@@ -1,104 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Nama kamu siapa?</title>
+    <title>Nama Kamu Siapa?</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Pacifico">
     <style>
+        :root {
+            --main-bg-color: #ffe0e0;
+            --element-bg-color: white;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --highlight-color: #00000035;
+            --text-color: #555;
+        }
+
         body {
             font-family: 'Montserrat', serif;
-            color: rgb(243, 101, 101);
-            font-size: 1.5vw; /* Responsive font size */
+            background-color: var(--main-bg-color);
+            font-size: 1.5vw;
             text-align: center;
-            background-image: url('https://dsm04pap002files.storage.live.com/y4mgDHpkfTCrEAeVRvX6dwbYycFvaKxXFkPGKokgiORE1zMsYdY6XZK24EPPHzdrzTLw7HNXpG-i07L3OU74FJnt0mj8Eo4Zy562KYIMwM83v8r4JKyvoEGcQKay2oYzFy1IfV7blJN3CKZ2WW_IRAlb7evxQ6UXigiMKRem88cx32J32aL779Ph_WTdU_EL_bK?width=626&height=939&cropmode=none'); /* Replace with your chosen image URL */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            overflow: hidden; /* Menyembunyikan scrollbar */
+            position: relative; /* Untuk mengatur posisi emoji */
         }
+
         .container {
-            padding: 2vw; /* Responsive padding */
-            background: rgba(255, 255, 255, 0.4); /* Semi-transparent background for glass effect */
-            border-radius: 10vw; /* Responsive border-radius */
-            box-shadow: 0px 1vw 2vw rgba(0, 0, 0, 0.3); /* Shadow for glass effect */
-            backdrop-filter: blur(1px); /* Blur effect for glass effect */
-            border
+            padding: 2vw;
+            background-color: var(--element-bg-color);
+            border-radius: 30px;
+            box-shadow: 5px 5px 15px var(--shadow-color), -0px -0px 10px #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2vw;
+            position: relative; /* Untuk menjaga posisi kontainer tetap */
         }
+
+        #judul {
+            color: var(--text-color);
+            font-family: cursive;
+            font-size: 2.5vw;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
         .input-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1vw; /* Add spacing between elements */
+            gap: 1vw;
         }
-        label {
-            font-size: 1.5vw;
-            margin-bottom: 1vw;
-            color: #4285f4; /* Change label color */
-        }
+
         #name-input {
             width: 20vw;
             padding: 1vw;
             margin: 1vw;
             border-radius: 1vw;
-            color: green;
-            background-color: rgba(255, 255, 255, 0.1); /* Transparent white background */
-            border: 1px solid #4285f4; /* Change input border color */
-            backdrop-filter: blur(5px); /* Blur effect */
+            background-color: var(--element-bg-color);
+            border: none;
+            box-shadow: inset 4px 4px 8px var(--shadow-color), inset -4px -4px 8px #fff;
+            font-size: 1.2vw;
+            text-align: center;
+            color: var(--text-color);
+            transition: all 0.3s ease;
         }
+
+        #name-input:focus {
+            outline: none;
+            box-shadow: inset 4px 4px 8px var(--shadow-color), inset -4px -4px 8px #fff, 0 0 10px var(--highlight-color);
+        }
+
         button {
             width: 10vw;
             padding: 1vw;
             margin: 1vw;
             border-radius: 1vw;
-            color: green;
-            background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
-            border: 1px solid #4285f4; /* Change button border color */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
-            transition: all 0.3s ease; /* Smooth transition */
+            background-color: var(--element-bg-color);
+            border: none;
+            box-shadow: 4px 4px 8px var(--shadow-color), -4px -4px 8px #fff;
+            font-size: 1.2vw;
+            color: var(--text-color);
+            cursor: pointer; 
+            transition: all 0.3s ease;
         }
+
         button:hover {
-            background-color: #eaffff; /* Light background on hover */
-            transform: scale(1.05); /* Slightly larger on hover */
+            transform: translateY(-2px);
+            box-shadow: 4px 4px 12px var(--shadow-color), -4px -4px 12px #fff;
         }
-        #judul {
-            color: red;
-            text-shadow: 0px 0.3vw 0.4vw black; /* Text shadow for depth */
+
+        button:active {
+            transform: translateY(2px);
+            box-shadow: inset 4px 4px 8px var(--shadow-color), inset -4px -4px 8px #fff;
         }
+
+        /* Gaya untuk emoji */
+        .emoji-container {
+            display: flex;
+            position: absolute; /* Mengatur posisi emoji */
+            bottom: 15%; /* Posisi vertikal emoji */
+            left: 50%;
+            transform: translateX(-50%); /* Memusatkan emoji */
+            gap: 10px;
+        }
+
+        .emoji {
+            font-size: 3vw;
+            cursor: pointer;
+            transition: transform 0.3s ease; /* Animasi saat disentuh */
+            position: relative; /* Memungkinkan pengaturan posisi emoji */
+        }
+
+        .emoji:hover {
+            transform: scale(1.2); /* Membesar saat hover */
+        }
+
         @media (max-width: 768px) {
             body {
-                font-size: 4vw; /* Adjust font-size for smaller screens */
+                font-size: 4vw;
             }
+
             .container {
-                padding: 5vw; /* Adjust padding for smaller screens */
+                padding: 5vw;
             }
-            input, button {
-                font-size: 4vw; /* Adjust font-size for smaller screens */
-                padding: 2vw; /* Adjust padding for smaller screens */
+
+            input,
+            button {
+                font-size: 4vw;
+                padding: 2vw;
             }
         }
     </style>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         function saveName() {
             const name = document.getElementById('name-input').value;
             localStorage.setItem('name', name);
             window.location.href = '❤️.html';
         }
+
+        // Mengatur posisi emoji saat diseret
+        let selectedEmoji = null;
+        let offsetX = 0;
+        let offsetY = 0;
+
+        function startDrag(event, emoji) {
+            selectedEmoji = emoji;
+            offsetX = event.clientX - emoji.getBoundingClientRect().left;
+            offsetY = event.clientY - emoji.getBoundingClientRect().top;
+
+            document.addEventListener('mousemove', dragEmoji);
+            document.addEventListener('mouseup', stopDrag);
+        }
+
+        function dragEmoji(event) {
+            if (selectedEmoji) {
+                selectedEmoji.style.position = 'absolute';
+                selectedEmoji.style.left = event.clientX - offsetX + 'px';
+                selectedEmoji.style.top = event.clientY - offsetY + 'px';
+            }
+        }
+
+        function stopDrag() {
+            if (selectedEmoji) {
+                // Memberikan efek melayang
+                selectedEmoji.style.transition = 'transform 0.5s ease';
+                const floatX = Math.random() * 20 - 10; // Mengambang acak di X
+                const floatY = Math.random() * 20 - 10; // Mengambang acak di Y
+                selectedEmoji.style.transform = `translate(${floatX}px, ${floatY}px)`;
+                
+                // Menghapus event listener
+                document.removeEventListener('mousemove', dragEmoji);
+                document.removeEventListener('mouseup', stopDrag);
+                selectedEmoji = null;
+            }
+        }
     </script>
 </head>
+
 <body>
     <div class="container">
-        <h3 id="judul">MASUKAN NAMA KAMU 🔥</h3>
+        <h3 id="judul">Masukan Nama Kamu</h3>
         <div class="input-container">
-            <input type="text" id="name-input" placeholder="Nama kamu?" maxlength="10" required>
-            <button type="button" onclick="saveName()">🤍</button>
+            <input type="text" id="name-input" placeholder="" maxlength="10" required>
+            <button type="button" onclick="saveName()"></button>
         </div>
-         <div class="g-recaptcha" data-sitekey="6LcL_xsqAAAAAOHLKhJs15lmeWY_kZaASsas_87a"></div>        
+    </div>
+    <div class="emoji-container">
+        <span class="emoji" onmousedown="startDrag(event, this)">😍</span>
+        <span class="emoji" onmousedown="startDrag(event, this)">❤️</span>
+        <span class="emoji" onmousedown="startDrag(event, this)">😊</span>
+        <span class="emoji" onmousedown="startDrag(event, this)">🎉</span>
+        <span class="emoji" onmousedown="startDrag(event, this)">🌟</span>
+        <span class="emoji" onmousedown="startDrag(event, this)">😎</span>
     </div>
 </body>
-             </html>
+
+</html>
